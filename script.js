@@ -93,11 +93,8 @@ favEle.addEventListener('click', function () {
   let node = document.createElement('li');
   let textnode = document.createTextNode(copyFav.textContent);
   node.appendChild(textnode);
-  
 
   let check = [].slice.call(ulEle.children);
- 
-
   // length =0 .add hbe ekta.
   // length !0.
   // main p == iterator
@@ -106,10 +103,11 @@ favEle.addEventListener('click', function () {
 
   if (check.length == 0) {
     ulEle.appendChild(node);
+    let addedContent = document.querySelector(".addedContent");
+    addedContent.textContent = "Simply Click over the element to remove. "
   } else {
     let found = false;
     for (let i = 0; i <= check.length; i++) {
-     
       if (check[i] !== undefined) {
         //match the value between
         if (qouteEle.textContent === check[i].textContent) {
@@ -118,9 +116,17 @@ favEle.addEventListener('click', function () {
         }
       }
     }
-    if(found == false){
-        ulEle.appendChild(node);
+    if (found == false) {
+      ulEle.appendChild(node);
     }
   }
-
+  for (let j = 0; j <= check.length; j++) {
+    if (check[j] !== undefined) {
+      check[j].addEventListener('click', function () {
+        check[j].remove();
+      });
+    }
+  }
 });
+// let see = ulEle.children.length;
+// console.log(see);

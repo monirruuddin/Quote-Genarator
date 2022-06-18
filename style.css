@@ -51,7 +51,7 @@ span{
 }
 ol{
   background-color: #fff;
-  padding: 30px;
+  padding: 10px 30px 30px 30px;
   border-radius: 5px;
 }
 ol li{
@@ -60,4 +60,8 @@ ol li{
 }
 .hide{
   display: none;
+}
+.addedContent{
+  font-size: 12px;
+  padding-top:5px ;
 }
